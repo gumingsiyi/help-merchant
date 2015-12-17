@@ -1,7 +1,5 @@
 package cn.edu.zjut.service;
 
-import cn.edu.zjut.po.Merchant;
-
 import java.io.File;
 
 /**

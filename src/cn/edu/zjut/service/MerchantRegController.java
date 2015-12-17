@@ -4,7 +4,6 @@ import cn.edu.zjut.dao.IMerchantDAO;
 import cn.edu.zjut.po.Merchant;
 import com.opensymphony.xwork2.ActionContext;
 
-import java.io.*;
 import java.util.Map;
 
 /**

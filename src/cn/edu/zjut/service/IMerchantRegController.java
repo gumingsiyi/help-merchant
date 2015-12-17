@@ -2,8 +2,6 @@ package cn.edu.zjut.service;
 
 import cn.edu.zjut.po.Merchant;
 
-import java.io.File;
-
 /**
  * Created by Stiles on 2015/12/12.
  */

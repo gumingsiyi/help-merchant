@@ -1,18 +1,13 @@
 package cn.edu.zjut.dao;
-import java.util.List;
 import java.util.Map;
 
 import org.hibernate.Query;
-
-import com.opensymphony.xwork2.ActionContext;
 
 import cn.edu.zjut.po.Merchant;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class MerchantDAO extends BaseHibernateDAO implements IMerchantDAO{
-	private Map<String, Object> request, session;
-
     public boolean save(Merchant merchant) {
         try {
             Session session = getSession();
@@ -31,7 +26,7 @@ public class MerchantDAO extends BaseHibernateDAO implements IMerchantDAO{
         try {
             Session session=getSession();
             Transaction ts = session.beginTransaction();
-            Query query = session.createQuery("from Merchant where ID = '"+ merchantID +"'");
+            Query query = session.createQuery("from Merchant where merchantID = '"+ merchantID +"'");
             //query.setParameter(0, merchantID);
             query.setMaxResults(1);
             Merchant merchant = (Merchant)query.uniqueResult();

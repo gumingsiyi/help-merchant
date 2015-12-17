@@ -2,10 +2,6 @@ package cn.edu.zjut.action;
 
 import cn.edu.zjut.po.Merchant;
 import cn.edu.zjut.service.IMerchantRegController;
-import cn.edu.zjut.service.MerchantRegController;
-import org.apache.struts2.ServletActionContext;
-
-import java.io.*;
 
 /**
  * Created by Stiles on 2015/12/12.
