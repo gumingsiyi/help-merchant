@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/helpdb"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+        <property name="mappingResources">
+            <list>
+                <value>cn/edu/zjut/po/Merchant.hbm.xml</value>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="baseDAO" class="cn.edu.zjut.dao.BaseHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <!-- 继承dao -->
+    <bean id="merchantDAO" class="cn.edu.zjut.dao.MerchantDAO" parent="baseDAO"/>
+    <!-- 业务逻辑依赖注入 -->
+    <bean id="merchantLoginController" class="cn.edu.zjut.service.MerchantLoginController">
+        <property name="merchantDAO" ref="merchantDAO"/>
+    </bean>
+    <bean id="merchantRegController" class="cn.edu.zjut.service.MerchantRegController">
+        <property name="merchantDAO" ref="merchantDAO"/>
+    </bean>
+    <bean id="merchantPictureUploadController" class="cn.edu.zjut.service.MerchantPictureUploadController">
+        <property name="merchantDAO" ref="merchantDAO"/>
+    </bean>
+
+    <bean id="merchantRegAction" class="cn.edu.zjut.action.MerchantRegAction">
+        <property name="merchantRegController" ref="merchantRegController"/>
+    </bean>
+    <bean id="merchantLoginAction" class="cn.edu.zjut.action.MerchantLoginAction">
+        <property name="merchantLoginController" ref="merchantLoginController"/>
+    </bean>
+    <bean id="merchantPictureUploadAction" class="cn.edu.zjut.action.MerchantPictureUploadAction">
+        <property name="merchantPictureUploadController" ref="merchantPictureUploadController"/>
+    </bean>
+</beans>

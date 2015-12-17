@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="strutsBean" extends="struts-default" namespace="/">
+        <action name="regView" class="merchantRegAction" method="regView">
+            <result name="success">/MerchantRegister.jsp</result>
+        </action>
+
+        <action name="reg" class="merchantRegAction" method="reg">
+            <result name="regSUCCESS">/MerchantIndex.jsp</result>
+            <result name="regFAILED">/MerchantRegister.jsp</result>
+            <result name="input">/MerchantRegister.jsp</result>
+        </action>
+
+        <action name="MerchantLogin" class="merchantLoginAction" method="login">
+            <result name="loginSUCCES" type="redirect">/MerchantIndex.jsp</result>
+            <result name="loginFAILED">/MerchantLogin.jsp</result>
+        </action>
+
+        <action name="uploadBusinessLicence" class="merchantPictureUploadAction" method="businessLicence">
+            <result name="success">/#</result>
+            <result name="error">/#</result>
+        </action>
+
+        <action name="uploadSecurityLicence" class="merchantPictureUploadAction" method="securityLicence">
+            <result name="success">/#</result>
+            <result name="error">/#</result>
+        </action>
+
+        <action name="uploadIcon" class="merchantPictureUploadAction" method="Icon">
+            <result name="success">/#</result>
+            <result name="error">/#</result>
+        </action>
+    </package>
+</struts>
