@@ -13,22 +13,6 @@ import java.io.*;
 public class MerchantRegAction {
     private Merchant merchant;
     private IMerchantRegController merchantRegController;
-    private File businessLicenceFile;
-    private File securityLicenceFile;
-
-    public File getSecurityLicenceFile() {
-        return securityLicenceFile;
-    }
-    public void setSecurityLicenceFile(File securityLicenceFile) {
-        this.securityLicenceFile = securityLicenceFile;
-    }
-    public File getBusinessLicenceFile() {
-        return businessLicenceFile;
-    }
-
-    public void setBusinessLicenceFile(File businessLicenceFile) {
-        this.businessLicenceFile = businessLicenceFile;
-    }
 
     public Merchant getMerchant() {
         return merchant;
