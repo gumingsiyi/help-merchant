@@ -45,7 +45,7 @@
     <bean id="merchantPictureUploadController" class="cn.edu.zjut.service.MerchantPictureUploadController">
         <property name="merchantDAO" ref="merchantDAO"/>
     </bean>
-
+    <!-- Action依赖注入 -->
     <bean id="merchantRegAction" class="cn.edu.zjut.action.MerchantRegAction">
         <property name="merchantRegController" ref="merchantRegController"/>
     </bean>

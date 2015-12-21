@@ -5,7 +5,7 @@
     <file url="file://$PROJECT_DIR$/src/cn/edu/zjut/dao/MerchantDAO.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/cn/edu/zjut/po/Merchant.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/cn/edu/zjut/service/IMerchantLoginController.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/cn/edu/zjut/service/MerchantLoginController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/edu/zjut/service/MerchantLoginController.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
