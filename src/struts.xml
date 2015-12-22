@@ -16,7 +16,7 @@
         </action>
 
         <action name="MerchantLogin" class="merchantLoginAction" method="login">
-            <result name="loginSUCCES" type="redirect">/MerchantIndex.jsp</result>
+            <result name="loginSUCCES">/MerchantIndex.jsp</result>
             <result name="loginFAILED">/MerchantLogin.jsp</result>
         </action>
 
@@ -33,6 +33,10 @@
         <action name="uploadIcon" class="merchantPictureUploadAction" method="Icon">
             <result name="success">/#</result>
             <result name="error">/#</result>
+        </action>
+
+        <action name="merchantReleaseOrder" class="merchantReleaseOrderAction" method="releaseOrder">
+            <result name="success">/#</result>
         </action>
     </package>
 </struts>

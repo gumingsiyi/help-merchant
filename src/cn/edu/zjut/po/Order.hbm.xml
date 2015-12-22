@@ -6,8 +6,8 @@
 -->
 <hibernate-mapping>
     <class name="cn.edu.zjut.po.Order" table="OrderInfo" catalog="helpdb">
-        <id name="orderID" type="string">
-            <column name="employeeID" length="32"/>
+        <id name="orderID" type="java.lang.String">
+            <column name="orderID" length="32"/>
             <generator class="uuid"/>
         </id>
 

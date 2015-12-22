@@ -35,6 +35,7 @@
     </bean>
     <!-- 继承dao -->
     <bean id="merchantDAO" class="cn.edu.zjut.dao.MerchantDAO" parent="baseDAO"/>
+    <bean id="orderDao" class="cn.edu.zjut.dao.OrderDAO" parent="baseDAO"/>
     <!-- 业务逻辑依赖注入 -->
     <bean id="merchantLoginController" class="cn.edu.zjut.service.MerchantLoginController">
         <property name="merchantDAO" ref="merchantDAO"/>
@@ -45,6 +46,9 @@
     <bean id="merchantPictureUploadController" class="cn.edu.zjut.service.MerchantPictureUploadController">
         <property name="merchantDAO" ref="merchantDAO"/>
     </bean>
+    <bean id="orderReleaseController" class="cn.edu.zjut.service.OrderReleaseController">
+        <property name="orderDAO" ref="orderDao"/>
+    </bean>
     <!-- Action依赖注入 -->
     <bean id="merchantRegAction" class="cn.edu.zjut.action.MerchantRegAction">
         <property name="merchantRegController" ref="merchantRegController"/>
@@ -54,5 +58,8 @@
     </bean>
     <bean id="merchantPictureUploadAction" class="cn.edu.zjut.action.MerchantPictureUploadAction">
         <property name="merchantPictureUploadController" ref="merchantPictureUploadController"/>
+    </bean>
+    <bean id="merchantReleaseOrderAction" class="cn.edu.zjut.action.MerchantReleaseOrderAction">
+        <property name="orderReleaseController" ref="orderReleaseController"/>
     </bean>
 </beans>
