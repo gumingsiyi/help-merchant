@@ -1,5 +1,4 @@
 package cn.edu.zjut.dao;
-import java.util.Map;
 
 import org.hibernate.Query;
 
